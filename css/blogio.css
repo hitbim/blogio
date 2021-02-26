@@ -1,0 +1,92 @@
+.iconera{
+	display: table-cell;
+}
+.post_icons{
+	display: table-cell;
+    width: 46px;
+    color: #000000;
+    vertical-align: middle;
+}
+.post_icons-camera{
+	font-size: 32px;
+}
+.post_icons-image{
+	font-size: 28px;
+}
+.post_icons-geolocation{
+	font-size: 25px;
+}
+.card{
+	border-radius: 28px !important;
+}
+.card-content-inner{
+	padding: 0;
+}
+.post-textarea{
+	background-color: transparent;
+	resize: none;
+	width: 97%;
+    border: 0;
+    height: 60px;
+    font-size: 12px;
+    padding: 15px 0 0 12px;
+}
+.demo-card-header-pic .card-header {
+    height: 17vw;
+    background-size: cover;
+    background-position: center;
+    border-radius: 29px;
+}
+.card-content-inner-feed{
+	padding: 15px;
+}
+.card-options{
+	font-size: 27px;
+}
+
+.back-icon{
+	position: absolute;
+    margin: 21px 0px 0px 17px;
+    color: #ffffff;
+    font-size: 33px;
+}
+.blog-page{
+	height: 100%;
+}
+.blog-content{
+	padding: 0px 18px;
+	height: 100%;
+}
+.post-header-image{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.post-header-content{
+	padding: 29px 0px 9px;
+	font-weight: bold;
+	width: 100%;
+}
+.post-subtitle{
+	font-size: 21px;
+    font-weight: bold;
+    width: 75%;
+}
+.post-date{
+	font-weight: 500;
+}
+.post-place{
+	font-weight: 400;
+    font-size: 12px;
+}
+.page-content-separator{
+	background: #000000;
+    width: 50%;
+    border-radius: 50px;
+    margin: 6px 0 43px 0;
+    height: 6px;
+}
+.post-content p{
+	font-weight: 300;
+    font-size: 11px;
+}
