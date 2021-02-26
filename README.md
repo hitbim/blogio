@@ -1,13 +1,16 @@
 # blogio
 
-Blog plugin for hitbim ios/android apps builder
+Example of a Blog plugin for hitbim ios/android apps builder
 
-# THIS FILES SHOWS
+
+## THIS FILES SHOWS
 
 ```
-// 1) HOW TO CREATE A HITBIM PLUGIN
-// 2) JQUERY IS INSTALLED BY DEFAULT
-// 3) HITBIM SDK INCLUDING METHODS:
+
+1) HOW TO CREATE A HITBIM PLUGIN
+2) JQUERY IS INSTALLED BY DEFAULT
+3) HITBIM SDK INCLUDING METHODS:
+
 ```
 
 NOTE: This generates the VMS (Visual Management System)
@@ -17,45 +20,54 @@ NOTE: Ho-Yeong, Don't worry for the CMS (Content Management System),
 
 
 
-# 1) INITIALIZE THE PLUGIN
-
-```
-Initializes the plugin
-
-$B.init(Object:{});
+## 1) INITIALIZE THE PLUGIN
 
 ```
 
-
-
-# 2) HOW TO REGISTER A FUNCTION
+$B.init({
+  name: 'blogio',
+  load: 'template_engine',
+  device: true,
+  token: 'token'
+  pluginId: 'plugin-id',
+  framework: 'framework7'
+});
 
 ```
-  How to register a function
 
-  (A)-> Your function name to call it trough the plugin
-  (B)-> Your function, it can be used JQUERY and selected framework for ui,
-        in this case Framework7 is selected, ionicframework to be added.
-  (C)-> For third party developers, small description about the
-  function; this for developers that want to connect to your plugin
+
+
+## 2) HOW TO REGISTER A FUNCTION
+
+```
+
+How to register a function
+
+(A)-> Your function name to call it trough the plugin
+(B)-> Your function, it can be used JQUERY and selected framework for ui,
+  in this case Framework7 is selected, ionicframework to be added.
+(C)-> For third party developers, small description about the
+function; this for developers that want to connect to your plugin
 
 $B.register(String:'my_function_name (A)', function:function(){} (B), String:'Optional: (C)');
 
 ```
 
-# 3) HOW TO CALL MY FUNCTION
+## 3) HOW TO CALL MY FUNCTION
 
 ```
-(A)-> Parameters that the function would/will receive
+
+(A)-> Parameters that the function will receive
 
 $B.call('my_function_name', 'parameters (A) ');
 
 ```
 
 
-# 4) CALL iOS/Android NATIVE FUNCTIONS
+## 4) CALL iOS/Android NATIVE FUNCTIONS
 
 ```
+
 (A)-> hardware: String: 'qr',
 (B)-> event: String: 'custom parameters for a native function',
 (C)-> fn: String: 'my_callback_function_name'
@@ -71,8 +83,10 @@ bim.native.exec({
 
 ```
  
-# How to build template
+## How to build template
+
 ```
+
 (A)-> Plugin id is required, use bim.plugin.id.get()
 (B)-> Main template of the plugin, uses placeholders technique
       https://idangero.us/template7/#.YDYms5P7SYV
@@ -93,8 +107,10 @@ bim.app.template({
 
 ```
 
-# How to append our content into the app
+## How to append our content into the app
+
 ```
+
 (A)-> Insert content into current visible screen
       use: 'current_screen' (String)
 
@@ -102,9 +118,10 @@ $B.append({$:'current_screen'}, all_feeds);
 
 ```
 
-# NOTE: *** To handle events should be used hitbim library. ***
+## NOTE: To handle events outside of register function method.
 
 ```
+
 $B.event({$:'.my-element', on:'click'}, function(e){
 
   // SAFE TO USE JQUERY OR RAW JAVASCRIPT HERE
@@ -112,13 +129,19 @@ $B.event({$:'.my-element', on:'click'}, function(e){
 
 ```
 
+## SQL - Database
 
-#  SQL demo files are already installed on the server,
-#  I included the demo files on sql/ folder
+```
+
+SQL demo files are already installed on the server,
+I included the demo files on sql/ folder
+
+```
 
 ##  SERVER CALLS
 
 ```
+
 (A)-> (Object key) query: String: 'INSERT' or 'UPDATE' or 'DELETE'
 (B)-> (Object key) table: String: 'Name of your generated table'
 (C)-> (Object key) rows: Object key: 'Name of the row/column'
