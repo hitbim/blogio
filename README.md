@@ -1,4 +1,4 @@
-# blogio
+# Blogio plugin
 
 Example of a Blog plugin for hitbim ios/android apps builder
 
@@ -14,9 +14,6 @@ Example of a Blog plugin for hitbim ios/android apps builder
 ```
 
 NOTE: This generates the VMS (Visual Management System)
-NOTE: Ho-Yeong, Don't worry for the CMS (Content Management System),
-      that I will do it, to work side by side better :)
-      The CMS it totally depends on the developer idea.
 
 
 
@@ -133,8 +130,9 @@ $B.event({$:'.my-element', on:'click'}, function(e){
 
 ```
 
-SQL demo files are already installed on the server,
-I included the demo files on sql/ folder
+/sql repo directory
+
+https://hitbim.com/plugins-dashboard
 
 ```
 
