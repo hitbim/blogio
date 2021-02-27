@@ -13,8 +13,8 @@ Example of a Blog plugin for hitbim ios/android apps builder
 
 ```
 
-NOTE: This generates the VMS (Visual Management System)
-
+NOTE: This generates a VMS (Visual Management System)
+NOTE: This does not create a CMS (Content Management System)
 
 
 ## 1) INITIALIZE THE PLUGIN
@@ -79,7 +79,7 @@ bim.native.exec({
 });
 
 ```
- 
+
 ## How to build template
 
 ```
@@ -93,7 +93,7 @@ bim.native.exec({
 (E)-> This option if the plugin will require to request more content
       from the server; infinity scroll technique.
       NOTE: *** This option is deprecated ***
-        
+
 bim.app.template({
   id: bim.plugin.id.get() (A),
   html: feeds (B),
@@ -108,10 +108,16 @@ bim.app.template({
 
 ```
 
-(A)-> Insert content into current visible screen
-      use: 'current_screen' (String)
+Insert content into current visible screen
+use: 'current_screen' (String)
 
 $B.append({$:'current_screen'}, all_feeds);
+
+OR
+
+Insert content in some section of the screen
+
+$B.append({$:'.my_element'}, all_feeds);
 
 ```
 
@@ -173,5 +179,3 @@ bim.db.query(token, params,  function(res){
 });
 
 ```
-
-
