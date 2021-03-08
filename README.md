@@ -94,12 +94,19 @@ bim.native.exec({
       from the server; infinity scroll technique.
       NOTE: *** This option is deprecated ***
 
-bim.app.template({
+var template = bim.app.template({
   id: bim.plugin.id.get() (A),
   html: feeds (B),
   context: feeds_context (C),
   name: bim.plugin.name.get() (D),
   dynamic: true (E), ** deprecated **
+});
+
+// THIS RETURN A PROMISE 
+
+template.then(function(template){
+
+  // APPEND CONTENT TO APP OR DO SOMETHING ELSE
 });
 
 ```
@@ -118,6 +125,13 @@ OR
 Insert content in some section of the screen
 
 $B.append({$:'.my_element'}, all_feeds);
+
+
+// Using template variable from example above:
+template.then(function(compiled){
+
+  $B.append({$:'current_screen'}, compiled);
+});
 
 ```
 
