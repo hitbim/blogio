@@ -227,6 +227,20 @@ bim.db.query(params,  function(res){
   if(res.error) app.alert(res.message);
 });
 
+
+## Display plugin database
+// Display current plugins names
+
+// Get list of current accepted plugins 
+// with developers public id
+bim.db.plugins();
+
+// Get list of plugins and public pluguins id from a developer
+bim.db.plugins({
+  developer: 'developer-id'
+});
+
+
 /*
 
   Situations where it could be necessary to cross-plugin communication 
