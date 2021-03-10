@@ -186,10 +186,68 @@ var params = {
  pluginId: pluginId
 };
 
-bim.db.query(token, params,  function(res){
+bim.db.query(params,  function(res){
 
   console.log(res);
   if(res.error) app.alert(res.message);
 });
 
+
 ```
+
+##  REQUESTS OTHER PLUGINS DATABASES
+### (If plugin's developer enable cross-plugin requests)
+
+```
+
+(A)-> (String) Insert plugin id of the plugin to be accessed
+
+var params = {
+ query:[
+  {
+   // Query type to be executed: UPDATE, INSERT, DELETE
+   query:  'INSERT', 
+   // Table created called 'feeds'
+   table: 'feeds', 
+   rows:{ 
+    // title and object are the row names of the table created
+    // Example rows:{ myTableRowName: 'custom value to insert' }
+    title: formData.title_post,
+    content: formData.content_post
+   }
+  }
+ ],
+ env: 'dev',
+ pluginId: pluginId (A)
+};
+
+bim.db.query(params,  function(res){
+
+  console.log(res);
+  if(res.error) app.alert(res.message);
+});
+
+/*
+
+  Situations where it could be necessary to cross-plugin communication 
+  
+*/
+
+Situation 1: Extending a production or development status app 
+by adding a new plugin.
+ 
+ -> https://hitbim.com/plugins-dashboard
+ -> Plugins Connect menu
+ -> Select app that you are working on.
+    NOTE: If the plugin does not appear it may be dissabled for external
+    request or the plugin is not installed on the application selected.
+
+Situation 2: Creating a new plugin for future users, which depend of onther
+plugin results.
+
+  -> Using the developer public id
+  -> Request via POST the developers's public plugin list.
+  
+
+```
+
