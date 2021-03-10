@@ -235,7 +235,7 @@ bim.db.query(params,  function(res){
 // with developers public id
 bim.db.plugins();
 
-// Get list of plugins and public pluguins id from a developer
+// Get list of plugins and public plugin ids from a developer
 bim.db.plugins({
   developer: 'developer-id'
 });
