@@ -135,6 +135,42 @@ template.then(function(compiled){
 
 ```
 
+## How to create a new screen
+
+```
+
+(A)-> Name of the new screen
+(B)-> Context to fill your template dynamically
+(C)-> Detect in case of load automatically a language
+      by detecting device language
+(D)-> Template of the new screen
+      NOTE: Placeholder should match the json keyNames 
+      from context lang key
+(E)-> Load page with animation
+(F)-> Function to generate the new page, can be done
+      synchronously or asynchronously
+
+
+var page = {
+  page:{
+    name: 'login' (A),
+    context: { (B)
+      lang: 'lang/login-en',
+      detect: false (C)
+    },
+    content: 'templates/login.html' (D),
+    animate: true (E)
+  },
+};
+
+bim.app.page(page, function(){ (F)
+
+  console.log('trigger after opened ', this);
+});
+
+
+```
+
 ## NOTE: To handle events outside of register function method.
 
 ```
